@@ -1,0 +1,5 @@
+.app {
+  @include full-screen;
+
+  background-color: $main-background-color;
+}

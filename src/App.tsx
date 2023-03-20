@@ -1,8 +1,12 @@
-
+import './styles/index.scss'
 
 function App() {
   return (
-    <h1>123132</h1>
+    <div className="app">
+      <div className="app2">
+        
+      </div>
+    </div>
   );
 }
 
