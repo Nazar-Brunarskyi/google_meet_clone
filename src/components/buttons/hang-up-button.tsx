@@ -1,0 +1,24 @@
+import { FC, memo } from 'react';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import { hoverRedColor, redColor } from '../../variables';
+import CallEndIcon from '@mui/icons-material/CallEnd';
+
+export const HangUpButton: FC = memo(
+  () => {
+    return (
+      <Tooltip title='hang up'>
+        <IconButton
+          aria-label="hang up"
+          size="medium"
+          sx={[
+            { background: redColor, width: '70px', borderRadius: '100px' },
+            { '&:hover': { background: hoverRedColor } },
+          ]}
+        >
+          <CallEndIcon fontSize="inherit" />
+        </IconButton>
+      </Tooltip>
+    );
+  },
+);

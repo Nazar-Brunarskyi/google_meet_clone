@@ -1,5 +1,6 @@
 .app {
   @include full-screen;
 
+  position: relative;
   background-color: $main-background-color;
 }
