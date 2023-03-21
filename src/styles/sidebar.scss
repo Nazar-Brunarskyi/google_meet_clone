@@ -1,0 +1,13 @@
+.sidebar {
+  @include flex-center;
+  overflow: hidden;
+
+  &__content-container {
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+    border-radius: $default-border-radius;
+    background: white;
+    color: black;
+  }
+}

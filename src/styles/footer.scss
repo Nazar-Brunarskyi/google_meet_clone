@@ -1,12 +1,13 @@
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  height: 80px;
+  height: $footer-height;
   padding: 0 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  grid-row: 2;
+  grid-column: span 2;
 
   &__call-buttons-set {
     display: grid;

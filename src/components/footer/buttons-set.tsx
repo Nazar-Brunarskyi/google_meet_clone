@@ -1,11 +1,11 @@
 import { FC, memo } from 'react';
-import { EmojiButton } from '../buttons/emoji-button';
-import { HangUpButton } from '../buttons/hang-up-button';
-import { MicrophoneButton } from '../buttons/microphone-button';
-import { OptionsButton } from '../buttons/options-button';
-import { RaiseHandButton } from '../buttons/raise-hand-button';
-import { ScreenSharingButton } from '../buttons/screen-sharing-button';
-import { VideoButton } from '../buttons/video-button';
+import { EmojiButton } from '../Buttons/emoji-button';
+import { HangUpButton } from '../Buttons/hang-up-button';
+import { MicrophoneButton } from '../Buttons/microphone-button';
+import { OptionsButton } from '../Buttons/options-button';
+import { RaiseHandButton } from '../Buttons/raise-hand-button';
+import { ScreenSharingButton } from '../Buttons/screen-sharing-button';
+import { VideoButton } from '../Buttons/video-button';
 
 
 export const ButtonsSet: FC = memo(
