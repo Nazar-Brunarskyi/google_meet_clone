@@ -25,8 +25,8 @@ export const AdditionalActions: FC = memo(
             >
               {
                 isOpened
-                  ? <ExpandMoreOutlinedIcon />
-                  : <ExpandLessOutlinedIcon />
+                  ? <ExpandMoreOutlinedIcon sx={{color: 'white'}} />
+                  : <ExpandLessOutlinedIcon sx={{color: 'white'}} />
               }
             </IconButton>
           </Tooltip>
@@ -39,31 +39,31 @@ export const AdditionalActions: FC = memo(
         })}>
           <Tooltip title='meetings details'>
             <IconButton aria-label="fingerprint" color="secondary">
-              <ErrorOutlineIcon />
+              <ErrorOutlineIcon sx={{color: 'white'}} />
             </IconButton>
           </Tooltip>
 
           <Tooltip title='show all participants'>
             <IconButton aria-label="fingerprint" color="secondary">
-              <PeopleAltOutlinedIcon />
+              <PeopleAltOutlinedIcon sx={{color: 'white'}} />
             </IconButton>
           </Tooltip>
 
           <Tooltip title='show the chat'>
             <IconButton aria-label="fingerprint" color="secondary">
-              <MessageOutlinedIcon />
+              <MessageOutlinedIcon sx={{color: 'white'}} />
             </IconButton>
           </Tooltip>
 
           <Tooltip title='actions'>
             <IconButton aria-label="fingerprint" color="secondary">
-              <CategoryOutlinedIcon />
+              <CategoryOutlinedIcon sx={{color: 'white'}} />
             </IconButton>
           </Tooltip>
 
           <Tooltip title='meeting management'>
             <IconButton aria-label="fingerprint" color="secondary">
-              <LockPersonOutlinedIcon />
+              <LockPersonOutlinedIcon sx={{color: 'white'}} />
             </IconButton>
           </Tooltip>
         </div>

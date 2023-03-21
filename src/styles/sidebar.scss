@@ -8,6 +8,19 @@
     padding: 10px;
     border-radius: $default-border-radius;
     background: white;
-    color: black;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  &__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
   }
 }

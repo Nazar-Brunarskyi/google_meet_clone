@@ -22,8 +22,8 @@ export const MicrophoneButton: FC = memo(
         >
           {
             isMuted
-              ? <MicOffIcon fontSize="inherit" />
-              : <KeyboardVoiceIcon fontSize="inherit" />
+              ? <MicOffIcon sx={{color: 'white'}} fontSize="inherit" />
+              : <KeyboardVoiceIcon sx={{color: 'white'}} fontSize="inherit" />
           }
         </IconButton>
       </Tooltip>

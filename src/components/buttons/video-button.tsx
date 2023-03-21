@@ -22,8 +22,8 @@ export const VideoButton: FC = memo(
         >
           {
             isVideoOn
-              ? <VideocamOffIcon fontSize="inherit" />
-              : <VideocamIcon fontSize="inherit" />
+              ? <VideocamOffIcon sx={{color: 'white'}} fontSize="inherit" />
+              : <VideocamIcon sx={{color: 'white'}} fontSize="inherit" />
           }
         </IconButton>
       </Tooltip>

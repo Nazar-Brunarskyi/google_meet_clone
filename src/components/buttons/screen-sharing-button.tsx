@@ -18,7 +18,7 @@ export const ScreenSharingButton: FC = memo(
             { '&:hover': { background: hoverGreyColor } },
           ]}
         >
-          <PresentToAllIcon fontSize="inherit" />
+          <PresentToAllIcon sx={{color: 'white'}} fontSize="inherit" />
         </IconButton>
       </Tooltip>
     );

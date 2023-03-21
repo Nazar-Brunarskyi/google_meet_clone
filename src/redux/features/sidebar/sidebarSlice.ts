@@ -6,7 +6,7 @@ interface CounterState {
 }
 
 const initialState: CounterState = {
-  message: '',
+  message: '12545243',
 }
 
 export const sidebarSlice = createSlice({

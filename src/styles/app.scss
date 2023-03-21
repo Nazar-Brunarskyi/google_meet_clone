@@ -12,9 +12,10 @@
   &--sidebar-on {
     grid-template: 1fr #{$footer-height} / 1fr 400px;
     column-gap: 20px;
+    padding-right: 10px;
 
     @media (max-width: $screen-size-m) {
-      grid-template: 1fr #{$footer-height} / 0px 1fr;
+      grid-template: 1fr #{$footer-height} / 0fr 1fr;
       column-gap: 0px;
     }
   }

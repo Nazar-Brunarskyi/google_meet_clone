@@ -16,7 +16,7 @@ export const OptionsButton: FC = memo(
             { '&:hover': { background: hoverGreyColor } },
           ]}
         >
-          <MoreVertIcon fontSize="inherit" />
+          <MoreVertIcon sx={{color: 'white'}} fontSize="inherit" />
         </IconButton>
       </Tooltip>
     );

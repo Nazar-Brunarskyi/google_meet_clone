@@ -18,7 +18,7 @@ export const HangUpButton: FC = memo(
             { '&:hover': { background: hoverRedColor } },
           ]}
         >
-          <CallEndIcon fontSize="inherit" />
+          <CallEndIcon sx={{color: 'white'}} fontSize="inherit" />
         </IconButton>
       </Tooltip>
     );

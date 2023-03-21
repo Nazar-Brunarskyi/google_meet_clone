@@ -18,7 +18,7 @@ export const EmojiButton: FC = memo(
             { '&:hover': { background: hoverGreyColor } },
           ]}
         >
-          <SentimentVerySatisfiedIcon fontSize="inherit" />
+          <SentimentVerySatisfiedIcon sx={{ color: 'white' }} fontSize="inherit" />
         </IconButton>
       </Tooltip >
     );

@@ -18,7 +18,7 @@ export const RaiseHandButton: FC = memo(
             { '&:hover': { background: hoverGreyColor } },
           ]}
         >
-          <PanToolOutlinedIcon fontSize="inherit" />
+          <PanToolOutlinedIcon sx={{color: 'white'}} fontSize="inherit" />
         </IconButton>
       </Tooltip>
     );
