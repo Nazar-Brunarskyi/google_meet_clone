@@ -1,12 +1,15 @@
 import { FC, memo } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { greyColor, hoverGreyColor } from '../../utils/variables';
+import { greyColor, hoverGreyColor, tabletSize } from '../../utils/variables';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
 import { toast } from 'react-hot-toast'
+import { useMediaQuery } from '@mui/material';
 
 export const EmojiButton: FC = memo(
   () => {
+    const isTablet = useMediaQuery(`(min-width:${tabletSize})`);
+
     return (
       <Tooltip title='show reaction'>
         <IconButton
@@ -14,7 +17,7 @@ export const EmojiButton: FC = memo(
           aria-label="show reaction"
           size="medium"
           sx={[
-            { background: greyColor },
+            { background: greyColor, display: !isTablet ? 'none' : '' },
             { '&:hover': { background: hoverGreyColor } },
           ]}
         >
