@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { setMessage } from '../../redux/features/sidebar/sidebarSlice';
 import { tabletSize } from '../../utils/variables';
@@ -20,41 +20,49 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import PanToolOutlinedIcon from '@mui/icons-material/PanToolOutlined';
 import PresentToAllIcon from '@mui/icons-material/PresentToAll';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
-import { toggle } from '../../redux/features/optionsMenu/optionsMenuSlice';
+
+interface Props {
+  onMenuToggle: () => void
+}
 
 const items: OptionsMenuItemType[] = [
-    { text: 'conference board', Icon: BorderColorOutlinedIcon },
-    { text: 'change layout', Icon: ViewQuiltIcon },
-    { text: 'full-screen mode', Icon: FullscreenIcon },
-    { text: 'move to picture into picture mode', Icon: PictureInPictureAltIcon },
-    { text: 'use filters', Icon: PhotoFilterIcon },
-    { text: 'report a problem', Icon: AnnouncementIcon },
-    { text: 'report a violation', Icon: ReportGmailerrorredIcon },
-    { text: 'troubleshooting and help', Icon: TroubleshootIcon },
-    { text: 'settings', Icon: SettingsOutlinedIcon },
-    { text: 'raise hand', Icon: PanToolOutlinedIcon, adaptive: true },
-    { text: 'share screen', Icon: PresentToAllIcon, adaptive: true },
-    { text: 'show reaction', Icon: SentimentVerySatisfiedIcon, adaptive: true },
-  ]
+  { text: 'conference board', Icon: BorderColorOutlinedIcon },
+  { text: 'change layout', Icon: ViewQuiltIcon },
+  { text: 'full-screen mode', Icon: FullscreenIcon },
+  { text: 'move to picture into picture mode', Icon: PictureInPictureAltIcon },
+  { text: 'use filters', Icon: PhotoFilterIcon },
+  { text: 'report a problem', Icon: AnnouncementIcon },
+  { text: 'report a violation', Icon: ReportGmailerrorredIcon },
+  { text: 'troubleshooting and help', Icon: TroubleshootIcon },
+  { text: 'settings', Icon: SettingsOutlinedIcon },
+  { text: 'raise hand', Icon: PanToolOutlinedIcon, adaptive: true },
+  { text: 'share screen', Icon: PresentToAllIcon, adaptive: true },
+  { text: 'show reaction', Icon: SentimentVerySatisfiedIcon, adaptive: true },
+]
 
-export const OptionsMenu = memo(
-  () => {
+export const OptionsMenu: FC<Props> = memo(
+  ({ onMenuToggle }) => {
     const isTablet = useMediaQuery(`(min-width:${tabletSize})`);
 
     const { message } = useAppSelector(state => state.sidebar);
-    const { isOpen } = useAppSelector(state => state.optionsMenu);
     const dispatch = useAppDispatch();
 
-    const dispatchMessage = useCallback((newMessage: string) => {
-      dispatch(
-        setMessage(message === newMessage ? '' : newMessage)
-      );
-    }, [message, dispatch]);
+    const dispatchMessage = useCallback(
+      (newMessage: string) => {
+        dispatch(
+          setMessage(message === newMessage ? '' : newMessage)
+        );
+      },
+      [message, dispatch],
+    );
 
-    const handleClick = (text: string) => {
-      dispatchMessage(text);
-      dispatch(toggle())
-    };
+    const handleClick = useCallback(
+      (text: string) => {
+        dispatchMessage(text);
+        onMenuToggle();
+      },
+      [dispatchMessage, onMenuToggle],
+    );
 
     return (
       <Paper
@@ -63,14 +71,13 @@ export const OptionsMenu = memo(
           position: 'absolute',
           bottom: '120%',
           right: !isTablet ? '-340%' : '20%',
-          display: isOpen ? 'block' : 'none'
         }}
       >
         <MenuList dense>
           {
             items.map(({ text, Icon, adaptive }) => (
               <MenuItem
-                sx={adaptive ? {display: isTablet ? 'none' : '' } : undefined}
+                sx={adaptive ? { display: isTablet ? 'none' : '' } : undefined}
                 onClick={() => handleClick(text)}
               >
                 <ListItemIcon>

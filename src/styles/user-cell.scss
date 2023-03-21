@@ -1,0 +1,16 @@
+.user-cell {
+  position: relative;
+  background-color: $secondary-background-color;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+
+  &__name {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: white;
+  }
+}

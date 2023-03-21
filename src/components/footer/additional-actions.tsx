@@ -24,7 +24,7 @@ export const AdditionalActions: FC = memo(
       dispatch(
         setMessage(message === newMessage ? '' : newMessage)
       );
-    }, [message, dispatch])
+    }, [message, dispatch]);
 
     const stylesForAfterElement = useMemo(() => ({
       content: '"12"',
@@ -41,7 +41,7 @@ export const AdditionalActions: FC = memo(
       fontSize: 12,
       fontWeight: 'bold',
       color: 'white',
-    }), [])
+    }), []);
 
     return (
       <div className="footer__additional-actions additional-actions">

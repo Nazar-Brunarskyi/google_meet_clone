@@ -1,4 +1,5 @@
 import { FC, memo } from 'react';
+import { UserCell } from '../userCell';
 
 export const Participants: FC = memo(
   () => {
@@ -6,7 +7,7 @@ export const Participants: FC = memo(
       <div className='participants app__participants'>
         <div className="participants__content-container">
         {
-          new Array(12).fill(1).map(() => <div className='participants__cell'></div>)
+          new Array(12).fill(1).map(() => <UserCell />)
         }
         </div>
       </div>

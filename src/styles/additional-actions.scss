@@ -17,6 +17,7 @@
     @media (max-width: $screen-size-m) {
       display: flex;
       flex-direction: column;
+      padding: 5px;
       position: absolute;
       bottom: 100%;
       background-color: $main-background-color;
