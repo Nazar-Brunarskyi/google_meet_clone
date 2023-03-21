@@ -3,6 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import { greyColor, hoverGreyColor } from '../../variables';
 import PresentToAllIcon from '@mui/icons-material/PresentToAll';
+import { toast } from 'react-hot-toast'
 
 export const ScreenSharingButton: FC = memo(
   () => {
@@ -11,6 +12,7 @@ export const ScreenSharingButton: FC = memo(
         <IconButton
           aria-label="share screen"
           size="medium"
+          onClick={() => toast('share screen!', { icon: '📺' })}
           sx={[
             { background: greyColor },
             { '&:hover': { background: hoverGreyColor } },

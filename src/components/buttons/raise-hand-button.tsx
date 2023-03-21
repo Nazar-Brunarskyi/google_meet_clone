@@ -3,6 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import { greyColor, hoverGreyColor } from '../../variables';
 import PanToolOutlinedIcon from '@mui/icons-material/PanToolOutlined';
+import { toast } from 'react-hot-toast'
 
 export const RaiseHandButton: FC = memo(
   () => {
@@ -11,6 +12,7 @@ export const RaiseHandButton: FC = memo(
         <IconButton
           aria-label="raise hand"
           size="medium"
+          onClick={() => toast('raise hand!', { icon: '🤚' })}
           sx={[
             { background: greyColor },
             { '&:hover': { background: hoverGreyColor } },

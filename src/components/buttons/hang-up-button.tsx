@@ -3,6 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import { hoverRedColor, redColor } from '../../variables';
 import CallEndIcon from '@mui/icons-material/CallEnd';
+import { toast } from 'react-hot-toast'
 
 export const HangUpButton: FC = memo(
   () => {
@@ -11,6 +12,7 @@ export const HangUpButton: FC = memo(
         <IconButton
           aria-label="hang up"
           size="medium"
+          onClick={() => toast('hang up!', { icon: '📴' })}
           sx={[
             { background: redColor, width: '70px', borderRadius: '100px' },
             { '&:hover': { background: hoverRedColor } },

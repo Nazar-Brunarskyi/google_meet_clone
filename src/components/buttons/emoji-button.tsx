@@ -3,12 +3,14 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import { greyColor, hoverGreyColor } from '../../variables';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
+import { toast } from 'react-hot-toast'
 
 export const EmojiButton: FC = memo(
   () => {
     return (
       <Tooltip title='show reaction'>
         <IconButton
+          onClick={() => toast('Emoji!', { icon: '😁' })}
           aria-label="show reaction"
           size="medium"
           sx={[
@@ -18,7 +20,7 @@ export const EmojiButton: FC = memo(
         >
           <SentimentVerySatisfiedIcon fontSize="inherit" />
         </IconButton>
-      </Tooltip>
+      </Tooltip >
     );
   },
 );
