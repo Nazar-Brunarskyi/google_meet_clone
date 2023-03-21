@@ -3,7 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import MicOffIcon from '@mui/icons-material/MicOff';
 import Tooltip from '@mui/material/Tooltip';
-import { greyColor, hoverGreyColor, hoverRedColor, redColor } from '../../variables';
+import { greyColor, hoverGreyColor, hoverRedColor, redColor } from '../../utils/variables';
 
 export const MicrophoneButton: FC = memo(
   () => {

@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { hoverRedColor, redColor } from '../../variables';
+import { hoverRedColor, redColor } from '../../utils/variables';
 import CallEndIcon from '@mui/icons-material/CallEnd';
 import { toast } from 'react-hot-toast'
 

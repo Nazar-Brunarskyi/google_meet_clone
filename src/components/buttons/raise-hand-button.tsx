@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { greyColor, hoverGreyColor } from '../../variables';
+import { greyColor, hoverGreyColor } from '../../utils/variables';
 import PanToolOutlinedIcon from '@mui/icons-material/PanToolOutlined';
 import { toast } from 'react-hot-toast'
 

@@ -1,7 +1,7 @@
 import { FC, memo, useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { greyColor, hoverGreyColor, hoverRedColor, redColor } from '../../variables';
+import { greyColor, hoverGreyColor, hoverRedColor, redColor } from '../../utils/variables';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import VideocamOffIcon from '@mui/icons-material/VideocamOff';
 
