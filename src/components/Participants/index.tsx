@@ -22,10 +22,10 @@ export const Participants: FC = memo(
 
           {
             users.length > 0 && !isLoading
-            && users.map(user => (
+            && users.map((user, index) => (
               <UserCell
-                name={user?.characterName}
-                photo={user?.image}
+                user={user}
+                index={index}
                 key={user?.characterName}
               />
             ))

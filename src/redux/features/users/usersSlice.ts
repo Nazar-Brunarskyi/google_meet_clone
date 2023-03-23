@@ -10,6 +10,11 @@ interface State {
   users: (User | null)[],
 }
 
+interface NewUserPayload {
+  index: number,
+  newUser: User,
+}
+
 const initialState: State = {
   isLoading: false,
   errorMessage: '',
@@ -18,10 +23,15 @@ const initialState: State = {
 
 export const fetchUsers = createAsyncThunk('fetch/users', getUsersForMeeting);
 
-export const sidebarSlice = createSlice({
+export const usersSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    setNewUser: (state, action: PayloadAction<NewUserPayload>) => {
+      const { index, newUser } = action.payload;
+      state.users.splice(index, 1, newUser)
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchUsers.pending, (state) => {
       state.isLoading = true;
@@ -40,6 +50,6 @@ export const sidebarSlice = createSlice({
   }
 })
 
-export const {  } = sidebarSlice.actions
+export const { setNewUser } = usersSlice.actions
 
-export default sidebarSlice.reducer
+export default usersSlice.reducer
