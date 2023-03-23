@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-interface CounterState {
+interface State {
   message: string,
 }
 
-const initialState: CounterState = {
+const initialState: State = {
   message: '',
 }
 
