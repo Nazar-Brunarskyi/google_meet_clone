@@ -1,8 +1,8 @@
 import { memo, useCallback, FC } from 'react';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { setMessage } from '../../redux/features/sidebar/sidebarSlice';
-import { tabletSize } from '../../utils/variables';
-import { OptionsMenuItemType } from '../../types/OptionsMenuItemType';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { setMessage } from '../redux/features/sidebar/sidebarSlice';
+import { tabletSize } from '../utils/variables';
+import { OptionsMenuItemType } from '../types/OptionsMenuItemType';
 import { useMediaQuery } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import MenuList from '@mui/material/MenuList';

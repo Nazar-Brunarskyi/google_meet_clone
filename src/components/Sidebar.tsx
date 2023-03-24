@@ -1,9 +1,9 @@
 import { FC, memo } from 'react';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import CloseIcon from '@mui/icons-material/Close';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
-import { clear } from '../../redux/features/sidebar/sidebarSlice';
+import { clear } from '../redux/features/sidebar/sidebarSlice';
 
 export const Sidebar: FC = memo(
   () => {

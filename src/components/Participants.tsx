@@ -1,10 +1,10 @@
 import { FC, memo, useEffect } from 'react';
-import { fetchUsers } from '../../redux/features/users/usersSlice';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { Loader } from '../loader';
-import { UserCell } from '../userCell';
+import { fetchUsers } from '../redux/features/users/usersSlice';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { Loader } from './Loader';
+import { UserCell } from './userCell';
 import Alert from '@mui/material/Alert';
-import { stylesToCenterAnElement } from '../../utils/variables';
+import { stylesToCenterAnElement } from '../utils/variables';
 
 export const Participants: FC = memo(
   () => {
@@ -22,11 +22,12 @@ export const Participants: FC = memo(
 
           {
             users.length > 0 && !isLoading
-            && users.map((user, index) => (
+            && users.map((user, index, array) => (
               <UserCell
                 user={user}
+                allUsers={array}
                 index={index}
-                key={user?.characterName}
+                key={user.id}
               />
             ))
           }

@@ -1,23 +1,23 @@
 import { FC, memo, useCallback, useState } from 'react';
-import { getRandomUser } from '../../API/getRandomUser';
-import { setNewUser } from '../../redux/features/users/usersSlice';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { User } from '../../types/user';
+import { getRandomUser } from '../API/getRandomUser';
+import { setNewUser } from '../redux/features/users/usersSlice';
+import { useAppDispatch } from '../redux/hooks';
+import { User } from '../types/user';
 import { toast } from 'react-hot-toast'
 import _ from 'lodash';
-import { defaultImage } from '../../utils/variables';
-import { Loader } from '../loader';
-import { Blur } from '../blur';
+import { defaultImage } from '../utils/variables';
+import { Loader } from './Loader';
+import { Blur } from './Blur';
 
 interface Props {
   index: number,
-  user: User | null;
+  user: User,
+  allUsers: User[],
 }
 
 export const UserCell: FC<Props> = memo(
-  ({ user, index }) => {
+  ({ user, index, allUsers }) => {
     const dispatch = useAppDispatch();
-    const { users } = useAppSelector(state => state.users);
 
     const [isloading, setIsLoading] = useState(false);
 
@@ -26,7 +26,7 @@ export const UserCell: FC<Props> = memo(
         try {
           const newUser = await getRandomUser();
 
-          if (users.some(user => _.isEqual(user, newUser))) {
+          if (allUsers.some(user => _.isEqual(user, newUser))) {
             loadNewUser();
 
             return;
@@ -37,7 +37,7 @@ export const UserCell: FC<Props> = memo(
           toast.error('an error has happened, try later')
         }
       },
-      [index, dispatch, users]
+      [index, dispatch, allUsers]
     )
 
     const handleClick = async () => {

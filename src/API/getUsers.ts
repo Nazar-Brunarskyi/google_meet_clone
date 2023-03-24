@@ -7,7 +7,7 @@ export const getUsersForMeeting = async () => {
     }
 
     const data = await response.json();
-    
+
     return data;
   } catch (err) {
     throw new Error('can\'t get users');

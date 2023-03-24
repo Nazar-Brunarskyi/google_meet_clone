@@ -3,7 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import { greyColor, hoverGreyColor } from '../../utils/variables';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { OptionsMenu } from '../optionsMenu';
+import { OptionsMenu } from '../OptionsMenu';
 
 export const OptionsButton: FC = memo(
   () => {

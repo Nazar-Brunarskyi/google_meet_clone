@@ -7,7 +7,7 @@ import { toast } from 'react-hot-toast'
 interface State {
   isLoading: boolean,
   errorMessage: string,
-  users: (User | null)[],
+  users: User[],
 }
 
 interface NewUserPayload {

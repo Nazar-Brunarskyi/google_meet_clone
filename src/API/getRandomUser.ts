@@ -10,7 +10,7 @@ export const getRandomUser = async (): Promise<User> => {
 
     const data = await response.json();
 
-    return data
+    return data[0]
   } catch (err) {
     throw new Error('can\'t get an user');
   }
