@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import { FC, memo, useCallback, useState } from 'react';
 import { getRandomUser } from '../API/getRandomUser';
 import { setNewUser } from '../redux/features/users/usersSlice';
@@ -52,11 +53,26 @@ export const UserCell: FC<Props> = memo(
 
     return (
       <div className='user-cell participants__cell' onClick={handleClick}>
-        <img
-          className='user-cell__image'
-          src={user?.image || defaultImage}
-          alt="123"
-        />
+
+        {
+          user.image
+            ? <img
+              className='user-cell__image'
+              src={user.image || defaultImage}
+              alt="123"
+            />
+            : <div className="user-cell__without-video">
+              <img
+                className='user-cell__default-image'
+                src={defaultImage}
+                alt="picture that shows us, that user doesn't have a photo"
+              />
+            </div>
+        }
+
+
+
+
         <div className="user-cell__name">{user?.characterName || 'unknown'}</div>
 
         {

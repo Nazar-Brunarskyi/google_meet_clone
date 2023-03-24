@@ -1,6 +1,6 @@
 export const getUsersForMeeting = async () => {
   try {
-    const response = await fetch('http://localhost:5000/getCharactersForMeeting');
+    const response = await fetch('https://google-meet-clone-server.herokuapp.com/getCharactersForMeeting');
 
     if (!response.ok) {
       throw new Error('can\'t get users');

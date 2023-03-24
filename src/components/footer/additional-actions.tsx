@@ -15,6 +15,7 @@ import { setMessage } from '../../redux/features/sidebar/sidebarSlice';
 
 export const AdditionalActions: FC = memo(
   () => {
+    const { users } = useAppSelector(state => state.users)
     const [isOpened, setIsOpened] = useState(false);
 
     const { message } = useAppSelector(state => state.sidebar);
@@ -27,7 +28,7 @@ export const AdditionalActions: FC = memo(
     }, [message, dispatch]);
 
     const stylesForAfterElement = useMemo(() => ({
-      content: '"12"',
+      content: `"${users.length}"`,
       position: 'absolute',
       bottom: '70%',
       right: 0,
@@ -41,7 +42,7 @@ export const AdditionalActions: FC = memo(
       fontSize: 12,
       fontWeight: 'bold',
       color: 'white',
-    }), []);
+    }), [users]);
 
     return (
       <div className="footer__additional-actions additional-actions">
