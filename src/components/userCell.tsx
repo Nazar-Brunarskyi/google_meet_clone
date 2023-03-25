@@ -70,9 +70,6 @@ export const UserCell: FC<Props> = memo(
             </div>
         }
 
-
-
-
         <div className="user-cell__name">{user?.characterName || 'unknown'}</div>
 
         {

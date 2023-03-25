@@ -8,7 +8,7 @@ export const Footer: FC = memo(
     return (
       <footer className='footer'>
         <div className="footer__meeting-details meeting-details">
-          <LiveClock /> &nbsp; | &nbsp; family business
+          <LiveClock /> &nbsp; | &nbsp; intergalactic meeting
         </div>
 
         <ButtonsSet />
