@@ -77,6 +77,7 @@ export const OptionsMenu: FC<Props> = memo(
           {
             items.map(({ text, Icon, adaptive }) => (
               <MenuItem
+                key={text}
                 sx={adaptive ? { display: isTablet ? 'none' : '' } : undefined}
                 onClick={() => handleClick(text)}
               >
