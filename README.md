@@ -6,19 +6,18 @@ The app is a clone of Google Meet! in this app, you can see a meeting of creatur
 
 # preview
 
+
+https://user-images.githubusercontent.com/115641582/227719035-0574d885-d154-4dcf-97cf-b46ed13dedf9.mp4
+
+
 ## stack 
    * React
    * SCSS
    * typescript
-   * Express
-   * PostgreSQL
-   * Sequelize
 
 ## technologies
    * BEM
-   * REST
    * MUI
-   * Heroku
 
 # To run it
 clone it with `git clone https://github.com/Nazar-Brunarskyi/google_meet_clone.git`
